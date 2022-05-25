@@ -58,8 +58,8 @@ while True:
             print(rs[i])
         sellfruit = input("어떤 과일을 판매하시겠습니까?")
         sellcnt = input("몇개를 판매하시겠습니까?")
-        sellcnt1=0
-        for i in range(len(rs)):
+        sellcnt1=0 #2022-05-25 추가
+        for i in range(len(rs)): #2022-05-25 len(rs[i])를 len(rs)로 변경
             if rs[i][0] == sellfruit:
                 sellcnt1 = rs[i][2]-int(sellcnt)
                 print("판매금액은 {0}원 입니다.".format(int(sellcnt)*rs[i][1]))
