@@ -12,7 +12,6 @@ cursor.execute("insert into test(name,price,cnt) values('수박',10000,5)")
 cursor.close()
 conn.commit()
 conn.close()
-
 while True:
     choice=input('''
         다음 중에서 하실 일을 골라주세요 :
@@ -59,7 +58,8 @@ while True:
             print(rs[i])
         sellfruit = input("어떤 과일을 판매하시겠습니까?")
         sellcnt = input("몇개를 판매하시겠습니까?")
-        for i in range(len(rs[i])):
+        sellcnt1=0
+        for i in range(len(rs)):
             if rs[i][0] == sellfruit:
                 sellcnt1 = rs[i][2]-int(sellcnt)
                 print("판매금액은 {0}원 입니다.".format(int(sellcnt)*rs[i][1]))
